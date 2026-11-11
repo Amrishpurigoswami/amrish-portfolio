@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { CursorSpotlight } from '@/components/cursor-spotlight'
 import { ParallaxGrid } from '@/components/parallax-grid'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { SkillsSection } from '@/components/skills-section'
 import {
   ArrowDown,
   ArrowDownRight,
@@ -85,25 +86,6 @@ const experience = [
     description:
       'Built a CNN image-classification workflow, from preprocessing and dataset preparation through model training, evaluation, and parameter tuning.',
     technologies: 'TensorFlow · NumPy · Pandas · Scikit-learn',
-  },
-]
-
-const skillGroups = [
-  {
-    label: 'Generative AI',
-    skills: 'RAG · LangChain · LangGraph · Agentic workflows · Prompt engineering',
-  },
-  {
-    label: 'Retrieval & knowledge',
-    skills: 'FAISS · Neo4j · ChromaDB · Hugging Face · Embeddings · Vector search',
-  },
-  {
-    label: 'Machine learning',
-    skills: 'TensorFlow · Scikit-learn · Pandas · NumPy · NLTK · CNNs',
-  },
-  {
-    label: 'Languages & cloud',
-    skills: 'Python · C · C++ · SQL · Java (basics) · AWS · Git',
   },
 ]
 
@@ -257,34 +239,7 @@ export function Portfolio() {
         </div>
       </section>
 
-      <section className="skills-section section-wrap" id="skills" aria-labelledby="skills-title">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">TOOLS I REACH FOR <span>04 / 04</span></p>
-            <h2 id="skills-title">My toolkit<span className="accent">.</span></h2>
-          </div>
-        </div>
-        <div className="skills-grid">
-          {skillGroups.map((group, index) => (
-            <div className="skill-row" key={group.label}>
-              <span className="skill-index">0{index + 1}</span>
-              <h3>{group.label}</h3>
-              <p>{group.skills}</p>
-            </div>
-          ))}
-        </div>
-        <div className="credentials-row">
-          <div>
-            <span className="micro-label">EDUCATION</span>
-            <strong>Jodhpur Institute of Engineering &amp; Technology</strong>
-            <span>B.Tech Computer Science · 2023—2027</span>
-          </div>
-          <a className="credential-link" href="/msde-certificate.pdf" target="_blank" rel="noreferrer">
-            <span><span className="micro-label">CERTIFICATION</span><strong>Generative AI Internship · MSDE</strong></span>
-            <ArrowUpRight aria-hidden="true" />
-          </a>
-        </div>
-      </section>
+      <SkillsSection />
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title">
         <div className="section-wrap contact-inner">
